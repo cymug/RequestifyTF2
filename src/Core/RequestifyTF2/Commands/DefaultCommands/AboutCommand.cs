@@ -16,7 +16,7 @@ namespace RequestifyTF2.Commands
         public List<string> Alias => new List<string>();
         public void Execute(User executor, List<string> arguments)
         {
-            ConsoleSender.SendCommand("RequestifyTF2 by DllMain/nullptr/Weespin",ConsoleSender.Command.Chat);
+            ConsoleSender.SendCommand("RequestifyTF2 by DllMain/nullptr/Weespin | Fixed by Pro Noob",ConsoleSender.Command.Chat);
             ConsoleSender.SendCommand("Download at: github.com/weespin/RequestifyTF2", ConsoleSender.Command.Chat);
         }
     }

@@ -112,6 +112,7 @@
   <ItemGroup>
     <Compile Include="API\Events.cs" />
     <Compile Include="API\User.cs" />
+    <Compile Include="Commands\DefaultCommands\VolumeCommand.cs" />
     <Compile Include="Commands\DefaultCommands\AboutCommand.cs" />
     <Compile Include="Commands\DefaultCommands\CommandsListCommand.cs" />
     <Compile Include="Localization\Localization.uk.Designer.cs">

@@ -158,13 +158,14 @@ namespace RequestPlugin
                 {
                     return;
                 }
-                Thread.Sleep(800);
+                Thread.Sleep(1600);
                 if (arguments.Count > 0)
                 {
                     if (arguments[0] == "cur")
                     {
                         Instance.SoundOutBackground.Stop();
-                        ConsoleSender.SendCommand($"Skipped a song, {Instance.BackGroundQueue.PlayList.Count} in queue",ConsoleSender.Command.Chat);
+                        ConsoleSender.SendCommand($"Skipped a song, {Instance.BackGroundQueue.PlayList.Count} in queue", ConsoleSender.Command.Chat);
+                        
                         return;
                     }
 
@@ -176,12 +177,52 @@ namespace RequestPlugin
                     }
 
                 }
-
+                
                 Instance.SoundOutBackground.Stop();
                 Instance.BackGroundQueue.PlayList = new ConcurrentQueue<Instance.Song>();
                 ConsoleSender.SendCommand("BackGroundQueue is now clear", ConsoleSender.Command.Chat);
             }
         }
+
+        public class QueueCommand : IRequestifyCommand
+        {
+            public string Author => "cymug";
+
+            public string Command => "!queue";
+
+            public string Help => "Prints out queue to chat!";
+
+            public string Name => "queue";
+
+            public List<string> Alias => new List<string>();
+
+
+            public bool OnlyAdmin => false;
+
+            public void Execute(User executor, List<string> arguments)
+            {
+                Thread.Sleep(1600);
+                if (Instance.BackGroundQueue.PlayList.Count == 0)
+                {
+                    ConsoleSender.SendCommand("Queue is currently empty, request some stuff with !request", ConsoleSender.Command.Chat);
+                }
+                else
+                {
+                    Array TempPlaylist = Instance.BackGroundQueue.PlayList.ToArray();
+                    ConsoleSender.SendCommand("Current queue:", ConsoleSender.Command.Chat);
+                    foreach (Instance.Song song in TempPlaylist)
+                    {
+                        ConsoleSender.SendCommand($"{song.Title} requested by {song.RequestedBy.Name}", ConsoleSender.Command.Chat);
+                    }
+                }
+                if (Instance.SoundOutBackground.PlaybackState == PlaybackState.Playing)
+                {
+                    ConsoleSender.SendCommand($"Now playing: {Instance.CurrentTitle} requested by {Instance.CurrentSongFrom}", ConsoleSender.Command.Chat);
+                }
+            }
+        }
+
+
 
         public class RequestCommand : IRequestifyCommand
         {
@@ -201,7 +242,8 @@ namespace RequestPlugin
             {
 	            if (arguments.Count <= 0)
 	            {
-		            return;
+                    ConsoleSender.SendCommand("Usage: !request [song name or url]", ConsoleSender.Command.Chat);
+                    return;
 	            }
 
 	            var url = arguments[0];

@@ -54,8 +54,6 @@
                     Style="{StaticResource MaterialDesignBody2TextBlock}" Height="27" Grid.RowSpan="2" Width="758">
                    Path PlaceHolder
                 </TextBlock>
-
-
             </Grid>
         </materialDesign:Card>
 
@@ -178,26 +176,41 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Content="Maximum background music length (min)" />
-                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,23,0" Height="50" VerticalAlignment="Center">
-                       <TextBox x:Name="txtNum" x:FieldModifier="public" Margin="5,5,0,5" Width="50" Height="30" Text="0" TextChanged="musiclenght_changed" />
-                     <Button  Margin="5,5,0,5" Content="˄" Padding="10,0,10,0" Click="cmdUp_Click" />
-                     <Button  Margin="0,5,0,5"  Content="˅" Padding="10,0,10,0" Click="cmdDown_Click" />
-                    </StackPanel>
+                <Label Grid.Row="0" Content="Maximum background music length (min)" />
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,23,0" Height="50" VerticalAlignment="Center">
+                    <TextBox x:Name="txtNum" x:FieldModifier="public" Margin="5,5,0,5" Width="50" Height="30" Text="0" TextChanged="musiclenght_changed" />
+                    <Button  Margin="5,5,0,5" Content="˄" Padding="10,0,10,0" Click="cmdUp_Click" />
+                    <Button  Margin="0,5,0,5"  Content="˅" Padding="10,0,10,0" Click="cmdDown_Click" />
+                </StackPanel>
             </Grid>
             <Grid Height="100"  Grid.Row="2">
-                 <Grid.RowDefinitions>
+                <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Content="AntiSpam threshold (req/min)" />
+                <Label Grid.Row="0" Content="AntiSpam threshold (req/min)" />
                 <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,23,0" Height="50" VerticalAlignment="Center">
                     <TextBox x:Name="txtNum2" x:FieldModifier="public" Margin="5,5,0,5" Width="50" Height="30" Text="0" TextChanged="antispamthreshold_changed" />
                     <Button Margin="5,5,0,5" Content="˄" Padding="10,0,10,0" Click="cmdUp2_Click" />
                     <Button Margin="0,5,0,5"  Content="˅"  Padding="10,0,10,0"  Click="cmdDown2_Click" />
                 </StackPanel>
             </Grid>
+            <Grid Height="100"  Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Volume (%)" />
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,23,0" Height="50" VerticalAlignment="Center">
+                    <TextBox x:Name="volumeTxt" x:FieldModifier="public" Margin="5,5,0,5" Width="50" Height="30" Text="10" TextChanged="volume_TextChanged" />
+                    <Button Margin="5,5,0,5" Content="˄" Padding="10,0,10,0" Click="cmdUp3_Click" />
+                    <Button Margin="0,5,0,5"  Content="˅"  Padding="10,0,10,0"  Click="cmdDown3_Click" />
+                </StackPanel>
+            </Grid>
+            <Button Content="Stop musicclear queue" HorizontalAlignment="Left" Margin="156,10.2,0,0" Grid.Row="3" VerticalAlignment="Top" Width="91" Height="49" Click="cmdClearQueue_Click"/>
+            <Button Content="Skip current song" HorizontalAlignment="Left" Margin="252,10.2,0,0" Grid.Row="3" VerticalAlignment="Top" Width="91" Height="49" Click="cmdSkipSong_Click" FontSize="10"/>
         </Grid>
     </Grid>
 

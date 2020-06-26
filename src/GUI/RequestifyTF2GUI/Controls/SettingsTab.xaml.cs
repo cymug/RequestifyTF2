@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Concurrent;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -46,7 +48,7 @@ namespace RequestifyTF2GUI.Controls
             }
         }
      
-            private void cmdUp2_Click(object sender, RoutedEventArgs e)
+        private void cmdUp2_Click(object sender, RoutedEventArgs e)
         {
             AntiSpamThredshold++;
         }
@@ -188,6 +190,70 @@ namespace RequestifyTF2GUI.Controls
             AppConfig.CurrentConfig.Admin =AdminBox.Text;
             Instance.Config.Admin = AdminBox.Text;
             AppConfig.Save();
+        }
+
+        private void cmdClearQueue_Click(object sender, RoutedEventArgs e)
+        {
+            Instance.BackGroundQueue.PlayList = new ConcurrentQueue<Instance.Song>();
+            Instance.SoundOutBackground.Stop();
+            Logger.Write(Logger.Status.Info, "Stopped music and cleared queue");
+        }
+
+        private void cmdSkipSong_Click(object sender, RoutedEventArgs e)
+        {
+            Instance.SoundOutBackground.Stop();
+            Logger.Write(Logger.Status.Info, "Skipped current song");
+        }
+
+        public int BaseVolume
+        {
+            get { return AppConfig.CurrentConfig.BaseVolume; }
+            set
+            {
+                AppConfig.CurrentConfig.BaseVolume = value;
+                volumeTxt.Text = value.ToString();
+                AppConfig.Save();
+            }
+        }
+
+        private void cmdUp3_Click(object sender, RoutedEventArgs e)
+        {
+            if (BaseVolume < 100)
+            {
+                BaseVolume++;
+            }
+        }
+
+        private void cmdDown3_Click(object sender, RoutedEventArgs e)
+        {
+            if (BaseVolume > 0)
+            {
+                BaseVolume--;
+            }
+        }
+
+        private void volume_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (volumeTxt == null)
+            {
+                return;
+            }
+
+            int volValue;
+            if (!int.TryParse(volumeTxt.Text, out volValue))
+            {
+                if (volValue < 0)
+                {
+                    volValue = 0;
+                }
+                if (volValue > 100)
+                {
+                    volValue = 100;
+                }
+                AppConfig.CurrentConfig.BaseVolume = volValue;
+                AppConfig.Save();
+                volumeTxt.Text = volValue.ToString();
+            }
         }
     }
 }

@@ -155,8 +155,8 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
-    <Reference Include="YoutubeExplode, Version=5.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\YoutubeExplode.5.0.5\lib\net461\YoutubeExplode.dll</HintPath>
+    <Reference Include="YoutubeExplode, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\YoutubeExplode.5.1.1\lib\net461\YoutubeExplode.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

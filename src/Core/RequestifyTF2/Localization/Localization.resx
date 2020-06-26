@@ -194,4 +194,7 @@
   <data name="CORE_ERROR_CANT_PREPARE_CONSOLE_LOG" xml:space="preserve">
     <value>Can't remove lines from console.log. The game is probably running. Please close the game before starting this program</value>
   </data>
+  <data name="CORE_QUEUED_TITLE_FROM" xml:space="preserve">
+    <value>{0} requested by {1}</value>
+  </data>
 </root>

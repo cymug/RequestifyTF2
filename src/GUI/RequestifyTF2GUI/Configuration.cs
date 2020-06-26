@@ -65,6 +65,7 @@ namespace RequestifyTF2GUI
             Instance.Config.GameDir = CurrentConfig.GameDirectory;
             Instance.Config.MaximumParsesPerMin = CurrentConfig.AntiSpamThredshold;
             Instance.Config.MaximumBackgroundInMin = CurrentConfig.MaximumBackgroundInMin;
+            Instance.Config.BaseVolume = CurrentConfig.BaseVolume;
             AppConfig.Save();
         }
 
@@ -74,6 +75,7 @@ namespace RequestifyTF2GUI
             Instance.Config.GameDir = CurrentConfig.GameDirectory;
             Instance.Config.MaximumParsesPerMin = CurrentConfig.AntiSpamThredshold;
             Instance.Config.MaximumBackgroundInMin = CurrentConfig.MaximumBackgroundInMin;
+            Instance.Config.BaseVolume = CurrentConfig.BaseVolume;
             var currentconfig = JsonConvert.SerializeObject(CurrentConfig);
             File.WriteAllText(Path.GetDirectoryName(Application.ExecutablePath) + "/config/config.json", currentconfig);
         }
@@ -86,6 +88,8 @@ namespace RequestifyTF2GUI
             [JsonProperty("CoreLang")] public string CoreLang { get; set; }
             [JsonProperty("BackGroundMusicLenght")] public int MaximumBackgroundInMin { get; set; }
             [JsonProperty("AntiSpamThredshold")] public int AntiSpamThredshold { get; set; }
+            [JsonProperty("BaseVolume")] public int BaseVolume { get; set; }
+
             [JsonProperty("ButtonBinds")]
             public Buttons Buttons { get; set; }
 

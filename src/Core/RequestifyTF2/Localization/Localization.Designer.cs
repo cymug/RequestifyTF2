@@ -189,6 +189,15 @@ namespace RequestifyTF2.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} requested by {1}.
+        /// </summary>
+        internal static string CORE_QUEUED_TITLE_FROM {
+            get {
+                return ResourceManager.GetString("CORE_QUEUED_TITLE_FROM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Searching for usable devices....
         /// </summary>
         internal static string CORE_SEARCHING_FOR_DEVICES {

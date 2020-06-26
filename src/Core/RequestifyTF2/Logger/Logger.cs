@@ -59,7 +59,7 @@ public class Logger
 
     private static void LogWrite(string logMessage)
     {
-       
+
         if (_mExePath == string.Empty)
         {
             _mExePath = AppDomain.CurrentDomain.BaseDirectory;

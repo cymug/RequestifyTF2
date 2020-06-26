@@ -17,7 +17,7 @@ namespace RequestifyTF2.Commands
             {
                 if (caller.Name == Instance.Config.Admin)
                 {
-                    Thread.Sleep(800);
+                    Thread.Sleep(1600);
                 }
             }
         

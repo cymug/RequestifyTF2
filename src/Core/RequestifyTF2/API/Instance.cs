@@ -19,7 +19,13 @@ namespace RequestifyTF2.API
         /// <summary>
         ///     Stores all Windows audio devices.
         /// </summary>
-        public static bool IsMuted { get; set; } 
+        public static bool IsMuted { get; set; }
+
+        public static bool NewSongLock { get; set; } = false;
+
+        public static string CurrentTitle { get; set; }
+
+        public static string CurrentSongFrom { get; set; }
 
         public static config Config { get; set; } = new config();
         public static ConcurrentQueue<IWaveSource> QueueForeGround { get; set; } = new ConcurrentQueue<IWaveSource>();
@@ -83,9 +89,9 @@ namespace RequestifyTF2.API
                 }
                 else
                 {
-                    Thread.Sleep(800);
-                    ConsoleSender.SendCommand("UwU sowwy butt its nyot possibwe to pway this swong", ConsoleSender.Command.Chat);
-                    ConsoleSender.SendCommand($"I can't handwe things that awe longer than {Instance.Config.MaximumBackgroundInMin} minyutes (inches) OwO", ConsoleSender.Command.Chat);
+                    Thread.Sleep(1600);
+                    //ConsoleSender.SendCommand("UwU sowwy butt its nyot possibwe to pway this swong", ConsoleSender.Command.Chat); bruh
+                    ConsoleSender.SendCommand($"Song time limit is set to {Instance.Config.MaximumBackgroundInMin} minutes. Please ask {Instance.Config.Admin} to request this for you", ConsoleSender.Command.Chat);
                     return true;
                 }
 
@@ -291,6 +297,7 @@ namespace RequestifyTF2.API
             public int MaximumParsesPerMin { get; set; } = 30;
 
             public int MaximumBackgroundInMin { get; set; } = 5;
+            public int BaseVolume { get; set; } = 10;
         }
 
         public class Song
