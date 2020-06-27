@@ -13,7 +13,7 @@ I made a new WPF version which includes 🥁:
  6. Added alot of languages (to be honest... All TF2 languages)
  7. And.. The project is alive for 2 fkng years! 
 ## Commands/Configruations
-Head over [here](https://github.com/weespin/RequestifyTF2/wiki/Commands) for wiki
+Head over [here](https://github.com/cymug/RequestifyTF2/wiki/Commands) for wiki
 ## Installation
 1. Go to download lastest [build and plugins](https://ci.appveyor.com/project/weespin26279/requestifytf2/build/artifacts), or download [stable releases](https://github.com/weespin/RequestifyTF2/releases)!
 2. Make sure that you have [Virtual Audio Cable (paid)](http://software.muzychenko.net/eng/vac.htm) or [VB-Audio (free)](http://vbaudio.jcedeveloppement.com/Download_CABLE/VBCABLE_Driver_Pack43.zip) installed and enabled on your PC
