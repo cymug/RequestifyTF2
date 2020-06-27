@@ -2,7 +2,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ce1b58babd174d2db3e1f8b658089dcd)](https://app.codacy.com/app/weespin/RequestifyTF2?utm_source=github.com&utm_medium=referral&utm_content=weespin/RequestifyTF2&utm_campaign=badger)
 [![Build](https://ci.appveyor.com/api/projects/status/github/weespin/Requestifytf2)](https://ci.appveyor.com/project/weespin26279/requestifytf2/)
 
-RequesifyTF2 is a simple program for Source Engine based games, which supports plugins, micspam, and alot of custom things.
+RequesifyTF2 is a simple program for Source Engine based games, which supports plugins, micspam, and a lot of custom things.
 ## New Version
 I made a new WPF version which includes 🥁:
  1. Game Browser! No need to Manually Select Path!
@@ -65,7 +65,7 @@ Requestify can do everything:
  5. On another players connect
  6. Do config commands (with generated code)
 # Development
-Use [development guide](https://github.com/weespin/RequestifyTF2/wiki/Developing)
+Use [development guide](https://github.com/cymug/RequestifyTF2/wiki/Developing)
 ### Screenshots (Old WPF)
 ![Main](https://i.imgur.com/8KAvnT2.png)
 ![Plugins](https://i.imgur.com/OruxLSR.png)
@@ -83,4 +83,4 @@ Use [development guide](https://github.com/weespin/RequestifyTF2/wiki/Developing
 ![OldestScreenshot2](http://i.imgur.com/Xx9lJph.png)
 
 ### Questions?
-Make a issue or add me on [Steam](http://steamcommunity.com/id/wspin/)
+Make a issue or add me on [Steam](http://steamcommunity.com/id/RealProNoob/)
